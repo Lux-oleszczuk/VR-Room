@@ -1,18 +1,20 @@
 using UnityEngine;
+using System.Collections;
 
 public class CustomBubbles : MonoBehaviour
 {   
-    [Tooltip("The object to be spawned")]
+    // [Tooltip("The object to be spawned")]
     public GameObject prefab = null;
-    [Tooltip("The transform where the object is spawned")]
+    // [Tooltip("The transform where the object is spawned")]
     public Transform spawnTransform = null;
-    [Header("jiggle settings")]
-    [Tooltip("Time for bubbles to scale in and settle")]
+    // [Header("jiggle settings")]
+    // [Tooltip("Time for bubbles to scale in and settle")]
     public float jiggleDuration = 0.3f;
-    [Tooltip("How big is the bulle on its peak")]
+    // [Tooltip("How big is the bulle on its peak")]
     public float overShootScale = 1.2f;
-    [Toolpit(Curve controlling the scaling motion from 0 to overshoot)]
+   // [Toolpit(Curve controlling the scaling motion from 0 to overshoot)]
     public AnimationCurve jiggleCurve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
+    Vector3 finalScale = new Vector3(10f, 10f, 10f);
 
     public void Spawn(){
         //create bubble
@@ -29,13 +31,13 @@ public class CustomBubbles : MonoBehaviour
         //reset scale to 0 so it can pop in
         newObject.transform.localScale = Vector3.zero;
         //start the popup coroutine
-        StartCoroutine(Jiggle(newObject.transform));
+        StartCoroutine(JiggleEffect(newObject.transform));
     }
-    private IEnumerator JiggleEffect(transform bubbleTransform) {
-        Vector3 startScale = Vector3 one;
+    private IEnumerator JiggleEffect(Transform bubbleTransform) {
+        Vector3 startScale = Vector3.one;
         float elapsedTime = 0f;
 
-        while (elapsedTime , jiggleDuration) {
+        while (elapsedTime < jiggleDuration) {
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / jiggleDuration;
             
@@ -43,7 +45,7 @@ public class CustomBubbles : MonoBehaviour
             float curveValue = jiggleCurve.Evaluate(t);
             
             // Lerp from 0 scale to overshootScale
-            float scaleFactor = Mathf.Lerp(0f, overshootScale, curveValue);
+            float scaleFactor = Mathf.Lerp(0f, overShootScale, curveValue);
             
             bubbleTransform.localScale = finalScale * scaleFactor;
             yield return null;
