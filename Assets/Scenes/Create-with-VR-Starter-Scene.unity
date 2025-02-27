@@ -215,8 +215,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 59384248}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.43, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.04, y: -0.01, z: 3.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -713,22 +713,22 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3b4451bffc57f46b795bdccd36c66edb,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.6919687
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b4451bffc57f46b795bdccd36c66edb,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b4451bffc57f46b795bdccd36c66edb,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b4451bffc57f46b795bdccd36c66edb,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.72192764
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b4451bffc57f46b795bdccd36c66edb,
         type: 3}
@@ -738,12 +738,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3b4451bffc57f46b795bdccd36c66edb,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b4451bffc57f46b795bdccd36c66edb,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -92.428
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b4451bffc57f46b795bdccd36c66edb,
         type: 3}
@@ -754,6 +754,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bubble Loop FBX
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3b4451bffc57f46b795bdccd36c66edb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -2178,13 +2183,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 450104085}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 1.43, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 673231860}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &472095324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2766,6 +2771,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1308062586874252413, guid: 839baed3709294671b6c3d96fb998970, type: 3}
   spawnTransform: {fileID: 59384249}
+  jiggleDuration: 0.3
+  overShootScale: 1.2
+  jiggleCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &712900736
 GameObject:
   m_ObjectHideFlags: 0
