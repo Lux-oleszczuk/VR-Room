@@ -35,6 +35,20 @@ public class CustomBubbles : MonoBehaviour
         Vector3 startScale = Vector3 one;
         float elapsedTime = 0f;
 
-        while (elapsedTime , jiggleDuration) {}
+        while (elapsedTime , jiggleDuration) {
+            elapsedTime += Time.deltaTime;
+            float t = elapsedTime / jiggleDuration;
+            
+            // Evaluate your animation curve (0..1) -> typically goes from 0 to 1
+            float curveValue = jiggleCurve.Evaluate(t);
+            
+            // Lerp from 0 scale to overshootScale
+            float scaleFactor = Mathf.Lerp(0f, overshootScale, curveValue);
+            
+            bubbleTransform.localScale = finalScale * scaleFactor;
+            yield return null;
+        }
+        // Ensure the final scale is set
+        bubbleTransform.localScale = finalScale;
     }
 }
